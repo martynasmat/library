@@ -232,6 +232,13 @@ function createBookElement(newBook) {
     bookElement.appendChild(cardContentWrapper);
     
     allBooks.push(bookElement);
+
+    return bookElement;
+};
+
+
+function removeBookCard(bookElement) {
+    bookElement.remove();
 };
 
 
@@ -243,7 +250,8 @@ function displayBookElement(bookElement) {
     const removeButtons = document.querySelectorAll(".btn-remove");
     removeButtons.forEach((button) => {
         button.addEventListener("click", (e) => {
-            console.log(e.target);
+            const bookIndex = e.target.getAttribute("book-number");
+            removeBookCard(allBooks[bookIndex]);
         });
     });
 };
