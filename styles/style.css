@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.header {
+    height: 7%;
+    width: 100%;
+    border-bottom: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-text {
+    font-size: 28px;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    padding: 30px;
+}
+
+.book-card {
+    border: 2px solid black;
+    height: 300px;
+    padding: 20px;
+}
+
+.card-content-wrapper {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 4fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    align-items: center;
+}
+
+.book-title {
+    grid-area: 1 / 1 / 2 / 3;
+    font-size: 18px;
+}
+
+.book-author {
+    grid-area: 2 / 1 / 3 / 3;
+    font-size: 16px;
+    align-self: flex-start;
+}
+
+.book-description-main-text {
+    grid-area: 3 / 1 / 4 / 3;
+    font-size: 18px;
+}
+
+.book-description {
+    grid-area: 4 / 1 / 5 / 3;
+    font-size: 16px;
+    align-self: flex-start;
+}
+
+.book-page-count {
+    grid-area: 5 / 1 / 6 / 3;
+}
+
+.btn-read {
+    grid-area: 6 / 1 / 7 / 2;
+}
+
+.btn-remove {
+    grid-area: 6 / 2 / 7 / 3;
+}
