@@ -41,7 +41,7 @@ body {
     height: 300px;
     padding: 20px;
     border-radius: 20px;
-    background-color: var(--color2);
+    background-color: #515761ad;
     color: var(--color4);
     transition: 0.4s;
 }
@@ -52,6 +52,10 @@ body {
     grid-template-columns: 1fr 1fr;
     height: 100%;
     align-items: center;
+    word-wrap: break-word;
+    overflow: auto;
+    gap: 10px;
+    text-overflow: ellipsis;
 }
 
 .book-title {
