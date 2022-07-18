@@ -216,6 +216,7 @@ function createBookElement(newBook) {
 
     bookReadBtn = document.createElement("button");
     bookReadBtn.setAttribute("class", "btn-read btn-book-card");
+    bookReadBtn.setAttribute("book-number", `${allBooks.length}`);
     bookReadBtn.textContent = "Read";
     bookContentWrapperChildren.push(bookReadBtn);
 
@@ -252,6 +253,15 @@ function displayBookElement(bookElement) {
         button.addEventListener("click", (e) => {
             const bookIndex = e.target.getAttribute("book-number");
             removeBookCard(allBooks[bookIndex]);
+        });
+    });
+
+    const readButtons = document.querySelectorAll(".btn-read");
+    readButtons.forEach((button) => {
+        button.addEventListener("click", (e) => {
+            const bookIndex = e.target.getAttribute("book-number");
+            allBooks[bookIndex].classList.toggle("read", true);
+            console.log(allBooks[bookIndex].classList);
         });
     });
 };

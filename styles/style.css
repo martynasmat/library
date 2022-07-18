@@ -5,20 +5,28 @@
 body {
     height: 100vh;
     width: 100vw;
+    --color1: #222831;
+    --color2: #393E46;
+    --color3: #00ADB5;
+    --color4: #EEEEEE;
+    font-family: 'Albert Sans', sans-serif;
+    background-color: var(--color2);
 }
 
 .header {
-    height: 7%;
+    height: 10%;
     width: 100%;
-    border-bottom: 2px solid black;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    background-color: var(--color1);
 }
 
 .header-text {
-    font-size: 28px;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color4);
 }
 
 .content-wrapper {
@@ -29,9 +37,13 @@ body {
 }
 
 .book-card {
-    border: 2px solid black;
+    border: 2px solid var(--color4);
     height: 300px;
     padding: 20px;
+    border-radius: 20px;
+    background-color: var(--color2);
+    color: var(--color4);
+    transition: 0.4s;
 }
 
 .card-content-wrapper {
@@ -44,7 +56,8 @@ body {
 
 .book-title {
     grid-area: 1 / 1 / 2 / 3;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .book-author {
@@ -55,7 +68,8 @@ body {
 
 .book-description-main-text {
     grid-area: 3 / 1 / 4 / 3;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .book-description {
@@ -66,6 +80,7 @@ body {
 
 .book-page-count {
     grid-area: 5 / 1 / 6 / 3;
+    font-weight: 600;
 }
 
 .btn-read {
@@ -77,13 +92,24 @@ body {
 }
 
 .btn-book-card {
-    width: min(125px, 50%);
+    width: min(150px, 70%);
     height: 30px;
     justify-self: center;
+    border-radius: 15px;
+    border: 2px solid var(--color4);
+    background-color: var(--color1);
+    color: var(--color4);
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.25s;
 }
 
 .btn-book-card:hover {
     cursor: pointer;
+}
+
+.btn-book-card:active {
+    width: min(200px, 80%);
 }
 
 .add-book-card-content-wrapper {
@@ -91,11 +117,14 @@ body {
     grid-template-rows: 2fr 1fr 2fr 3fr;
     height: 100%;
     align-items: center;
-    justify-content: center;
+    justify-items: center;
 }
 
 .add-book-text {
     grid-row: 2 / 3;
+    color: var(--color4);
+    font-size: 24px;
+    font-weight: 600;
 }
 
 .btn-add {
@@ -104,6 +133,20 @@ body {
     width: 70px;
     border-radius: 50%;
     font-size: 26px;
+    border: none;
+    background-color: var(--color1);
+    color: var(--color4);
+    transition: 0.25s;
+}
+
+.btn-add:hover {
+    color: var(--color2);
+    background-color: var(--color4);
+}
+
+.read {
+    background-color: var(--color3);
+    color: var(--color2);
 }
 
 .btn-add:hover {
@@ -124,8 +167,23 @@ body {
     gap: 3px;
 }
 
+label {
+    font-weight: 600;
+}
+
+input {
+    border: 2px solid var(--color1);
+    padding: 3px;
+    border-radius: 5px;
+    background-color: #2228314f;
+    color: var(--color4);
+}
+
+input:focus {
+    outline: none;
+}
+
 .form-button-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
