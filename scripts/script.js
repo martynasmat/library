@@ -1,8 +1,12 @@
-function Book(title, author, description, pageCount) {
-    this.title = title;
-    this.author = author;
-    this.description = description;
-    this.pageCount = pageCount;
+class Book {
+
+    constructor (title, author, description, pageCount) {
+        this.title = title;
+        this.author = author;
+        this.description = description;
+        this.pageCount = pageCount;
+    };
+    
 };
 
 
